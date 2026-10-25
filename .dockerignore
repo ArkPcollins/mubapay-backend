@@ -1,0 +1,7 @@
+node_modules
+tests
+coverage
+private-storage
+.env
+.env.*
+!.env.example
