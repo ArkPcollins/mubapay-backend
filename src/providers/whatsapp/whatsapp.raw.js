@@ -12,7 +12,7 @@ const client = new Client({
   authStrategy: new LocalAuth({ dataPath: './sessions' }),
   puppeteer: {
     headless: true,
-    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+    // executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
     args: ['--no-sandbox', '--disable-setuid-sandbox']
   }
 });
