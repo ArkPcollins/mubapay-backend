@@ -12,7 +12,7 @@ const { User } = require('../users/user.model');
 const notifications = require('../notifications/notifications.service');
 const audit = require('../audit/audit.service');
 const realtime = require('../../realtime/realtime');
-const whatsapp = require('../../providers/whatsapp/whatsapp.adapter');
+const {sendText} = require('../../providers/whatsapp/whatsapp.raw');
 const email = require('../../providers/email/brevo.adapter');
 const usersService = require('../users/users.service');
 const config = require('../../config');
@@ -106,7 +106,7 @@ async function deliverStaffReply(t, text) {
       const phone = t.contact?.phone;
       const within24h = t.lastCustomerMessageAt && Date.now() - t.lastCustomerMessageAt.getTime() < 24 * 3600e3;
       if (!within24h) return { status: 'not_sent', error: 'Outside WhatsApp 24-hour service window — use an approved template or reply in-app/email' };
-      await whatsapp.sendText(phone, `[${t.reference}] ${text}`);
+      await sendText(phone, `[${t.reference}] ${text}`);
       return { status: 'sent' };
     }
     if (t.channel === 'email') {

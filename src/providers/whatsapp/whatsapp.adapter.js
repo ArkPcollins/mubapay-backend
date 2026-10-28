@@ -16,6 +16,7 @@ const { E } = require('../../lib/errors');
 
 function requireConfigured() {
   if (!config.integrations.whatsapp) {
+    console.log('callled 1 *************', {whatsapp: config.integrations.whatsapp, integration: config.integrations});
     throw E.notConfigured('WhatsApp Business', 'Set WHATSAPP_PHONE_NUMBER_ID, WHATSAPP_ACCESS_TOKEN, WHATSAPP_APP_SECRET and WHATSAPP_VERIFY_TOKEN. See documentation/integrations/whatsapp.md');
   }
 }
@@ -42,6 +43,7 @@ async function sendText(to, body) {
 
 /** Send an OTP using an approved authentication template (code in body + copy-code button). */
 async function sendOtp(to, code) {
+  console.log("send OTP *********", to, code)
   requireConfigured();
   if (!config.WHATSAPP_OTP_TEMPLATE) throw E.notConfigured('WhatsApp OTP template', 'Create and get approval for an authentication template, then set WHATSAPP_OTP_TEMPLATE');
   const res = await request(endpoint(), {

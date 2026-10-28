@@ -20,7 +20,7 @@ const { SavingsPlan } = require('../src/modules/savings/savings.models');
 const { Property } = require('../src/modules/realestate/realestate.models');
 const { ConsentRecord, LegalDocument } = require('../src/modules/legal/legal.models');
 
-const PASSWORD = process.env.SEED_PASSWORD || 'MubaPay-Dev-2026!';
+const PASSWORD = process.env.SEED_PASSWORD || 'MubaPay2026!';
 
 async function upsertUser(email, data, { staffSecret } = {}) {
   let u = await User.findOne({ email });

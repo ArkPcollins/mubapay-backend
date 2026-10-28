@@ -63,6 +63,7 @@ const schema = z.object({
   SHIPBUBBLE_DEFAULT_CATEGORY_ID: optStr,
   NOMINATIM_BASE_URL: z.string().default('https://nominatim.openstreetmap.org'),
   NOMINATIM_USER_AGENT: optStr,
+  WHATSAPP_ALLOW: bool(false),
   NOMINATIM_EMAIL: optStr,
   WHATSAPP_GRAPH_VERSION: z.string().default('v21.0'),
   WHATSAPP_PHONE_NUMBER_ID: optStr,
@@ -134,7 +135,8 @@ function load(env = process.env) {
       cloudinary: Boolean(c.CLOUDINARY_CLOUD_NAME && c.CLOUDINARY_API_KEY && c.CLOUDINARY_API_SECRET),
       shipbubble: Boolean(c.SHIPBUBBLE_API_KEY),
       nominatim: Boolean(c.NOMINATIM_USER_AGENT),
-      whatsapp: Boolean(c.WHATSAPP_PHONE_NUMBER_ID && c.WHATSAPP_ACCESS_TOKEN),
+      whatsapp: Boolean(c.WHATSAPP_ALLOW),
+      // whatsapp: Boolean(c.WHATSAPP_PHONE_NUMBER_ID && c.WHATSAPP_ACCESS_TOKEN),
       redis: Boolean(c.REDIS_URL),
     }),
   });

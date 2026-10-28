@@ -40,7 +40,9 @@
     "pino": "^9.6.0",
     "pino-http": "^10.4.0",
     "qrcode": "^1.5.4",
+    "qrcode-terminal": "^0.12.0",
     "socket.io": "^4.8.1",
+    "whatsapp-web.js": "^1.34.7",
     "zod": "^3.24.1"
   },
   "devDependencies": {
@@ -61,6 +63,7 @@
   },
   "allowScripts": {
     "argon2@0.41.1": true,
-    "fsevents@2.3.3": true
+    "fsevents@2.3.3": true,
+    "puppeteer@24.38.0": true
   }
 }
