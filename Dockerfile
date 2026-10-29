@@ -1,3 +1,4 @@
+# Use a secure, production-ready Node runtime base image
 # MubaPay API / worker image. The same image runs the API (default) or the
 # worker (`node src/worker.js`). No secrets are baked in: configuration comes
 # from the environment at runtime.

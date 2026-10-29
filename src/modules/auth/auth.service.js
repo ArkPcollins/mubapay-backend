@@ -19,8 +19,7 @@ const audit = require("../audit/audit.service");
 const notifications = require("../notifications/notifications.service");
 const usersService = require("../users/users.service");
 const settings = require("../settings/settings.service");
-const whatsapp = require("../../providers/whatsapp/whatsapp.raw");
-// const whatsapp = require("../../providers/whatsapp/whatsapp.adapter");
+const whatsapp = require("../../providers/whatsapp/whatsapp.adapter");
 const logger = require("../../lib/logger");
 const consent = require("../legal/consent.service");
 
